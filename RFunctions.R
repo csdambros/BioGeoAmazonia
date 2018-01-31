@@ -17,17 +17,19 @@ decostandDist<-function(dist,method="standardize",...){
   
   require(vegan)
   
-  lab<-labels(dist)
+  distCopy<-dist
+#  lab<-labels(dist)
   
-  Mat<-as.matrix(dist)
-  nMat<-nrow(Mat)
-  resuMat<-matrix(decostand(as.vector(Mat),method=method,...),nMat,nMat)
+#  Mat<-as.matrix(dist)
+#  nMat<-nrow(Mat)
+#  resuMat<-matrix(decostand(as.vector(Mat),method=method,...),nMat,nMat)
+  distStd<-decostand(as.vector(dist),"standardize",...)
+  distCopy[1:length(distCopy)]<-distStd
+#  rownames(resuMat)<-lab
+#  colnames(resuMat)<-lab
   
-  rownames(resuMat)<-lab
-  colnames(resuMat)<-lab
-  
-  resu<-as.dist(resuMat)
-  return(resu)
+#  resu<-as.dist(resuMat)
+  return(distCopy)
     
 }
 

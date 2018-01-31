@@ -198,6 +198,20 @@ ecoDistSplit<-lapply(occPASplit,vegdist,method="jac")
 ## Standardize dissimilarity matrices (sd=1, mean=0)
 ecoDistSplitStd<-lapply(ecoDistSplit,decostandDist,na.rm=TRUE)
 
+ver<-decostand(as.vector(ecoDistSplit$Butterflies),"standardize")
+sd(ver)
+ver2<-ecoDistSplit$Butterflies
+
+ver2[1:length(ver2)]<-ver
+
+
+plot(as.matrix(ver,45,45),as.matrix(ecoDistSplit$Butterflies))
+
+plot(ver2,ecoDistSplit$Butterflies)
+
+plot(ecoDistSplitStd$Butterflies,ecoDistSplit$Butterflies)
+
+
 ## Summarize species composition in PCoA axes
 pcoaSplit<-lapply(ecoDistSplit,cmdscale)
 
@@ -256,7 +270,7 @@ AllVarStd<-lapply(AllVar,decostandDist,na.rm=TRUE)
 
 ## Run MRM for all variables individually in each group
 ### !!! It may take some time to run
-AllIndResu<-lapply(AllVar,function(x){
+AllIndResu<-lapply(AllVarStd,function(x){
   lapply(ecoDistSplitStd,MRM4,predictorDist=x) })
 
 # Organize all coefficients and p-values in a single table
@@ -1173,7 +1187,7 @@ AllFishVarStd<-lapply(AllFishVar,decostandDist,na.rm=TRUE)
 
 ## Run MRM for all variables individually in each group
 ### !!! It may take some time to run
-AllIndFishResu<-lapply(AllFishVar,function(x){
+AllIndFishResu<-lapply(AllFishVarStd,function(x){
   lapply(ecoDistSplitStd,MRM4,predictorDist=x) })
 
 # Coefs
