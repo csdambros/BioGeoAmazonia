@@ -182,17 +182,17 @@ cor(env[,c("sa.latlong.treecover",
         use="pairwise.complete")
 ```
 
-    ##                      sa.latlong.treecover SumofBases_cmol.log         clay
-    ## sa.latlong.treecover           1.00000000        -0.020563865 -0.007641000
-    ## SumofBases_cmol.log           -0.02056386         1.000000000 -0.004166338
-    ## clay                          -0.00764100        -0.004166338  1.000000000
-    ## CHELSA_bio_5                   0.13223819         0.003874775 -0.104513550
-    ## CHELSA_bio_6                   0.08478933        -0.378614321 -0.009015615
-    ## CHELSA_bio_17                 -0.03641742        -0.274979880  0.112600564
+    ##                      sa.latlong.treecover SumofBases_cmol.log        clay
+    ## sa.latlong.treecover           1.00000000        -0.020563865 -0.02110539
+    ## SumofBases_cmol.log           -0.02056386         1.000000000 -0.01060797
+    ## clay                          -0.02110539        -0.010607968  1.00000000
+    ## CHELSA_bio_5                   0.13223819         0.003874775 -0.11319894
+    ## CHELSA_bio_6                   0.08478933        -0.378614321  0.02444190
+    ## CHELSA_bio_17                 -0.03641742        -0.274979880  0.11867099
     ##                      CHELSA_bio_5 CHELSA_bio_6 CHELSA_bio_17
     ## sa.latlong.treecover  0.132238187  0.084789332   -0.03641742
     ## SumofBases_cmol.log   0.003874775 -0.378614321   -0.27497988
-    ## clay                 -0.104513550 -0.009015615    0.11260056
+    ## clay                 -0.113198940  0.024441900    0.11867099
     ## CHELSA_bio_5          1.000000000  0.005640386   -0.42615727
     ## CHELSA_bio_6          0.005640386  1.000000000    0.66584282
     ## CHELSA_bio_17        -0.426157272  0.665842816    1.00000000
@@ -448,19 +448,19 @@ MRM4(ecoDistStd,
 
     ## $coef
     ##               ecoDist  pval
-    ## Int      1.467039e-15 0.006
-    ## p1.geo   4.232343e-01 0.001
-    ## p2.clay  9.368034e-02 0.001
-    ## p3.bases 1.486459e-01 0.001
-    ## p4.tree  9.911521e-02 0.004
+    ## Int      1.506251e-15 0.002
+    ## p1.geo   4.231117e-01 0.001
+    ## p2.clay  1.005961e-01 0.001
+    ## p3.bases 1.490837e-01 0.001
+    ## p4.tree  1.056745e-01 0.002
     ## 
     ## $r.squared
     ##        R2      pval 
-    ## 0.2474708 0.0010000 
+    ## 0.2487709 0.0010000 
     ## 
     ## $F.test
     ##        F   F.pval 
-    ## 1602.989    0.001
+    ## 1614.200    0.001
 
 It is important to note that climatic distances and biogeographic
 differences were not included in the multiple regression model because
@@ -637,26 +637,26 @@ summary(CompleteModel)
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -1.54451 -0.40886 -0.04237  0.29311  1.56328 
+    ## -1.54488 -0.41277 -0.04504  0.30288  1.56015 
     ## 
     ## Coefficients:
     ##                      Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)          -0.09375    0.13833  -0.678  0.49881    
-    ## class_RibasGuiana     0.08841    0.18023   0.491  0.62433    
-    ## class_RibasNegro      0.64470    0.19383   3.326  0.00106 ** 
-    ## class_RibasRondonia  -0.38497    0.21044  -1.829  0.06893 .  
-    ## class_RibasTapajos   -0.64982    0.55971  -1.161  0.24711    
-    ## clay                 -0.02831    0.04809  -0.589  0.55679    
-    ## SumofBases_cmol.log  -0.27418    0.05295  -5.178 5.74e-07 ***
-    ## sa.latlong.treecover -0.01186    0.04133  -0.287  0.77444    
-    ## Lat                  -0.73773    0.08775  -8.407 1.03e-14 ***
-    ## Long                  0.54411    0.06214   8.756 1.16e-15 ***
+    ## (Intercept)          -0.10283    0.13793  -0.746 0.456880    
+    ## class_RibasGuiana     0.10057    0.17954   0.560 0.576060    
+    ## class_RibasNegro      0.66054    0.19528   3.382 0.000874 ***
+    ## class_RibasRondonia  -0.39325    0.21077  -1.866 0.063627 .  
+    ## class_RibasTapajos   -0.64495    0.55928  -1.153 0.250302    
+    ## clay                 -0.03856    0.04749  -0.812 0.417896    
+    ## SumofBases_cmol.log  -0.27299    0.05282  -5.168 6.01e-07 ***
+    ## sa.latlong.treecover -0.01519    0.04157  -0.365 0.715257    
+    ## Lat                  -0.74751    0.08763  -8.530 4.77e-15 ***
+    ## Long                  0.54404    0.06201   8.774 1.04e-15 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.544 on 188 degrees of freedom
-    ## Multiple R-squared:  0.7176, Adjusted R-squared:  0.704 
-    ## F-statistic: 53.07 on 9 and 188 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.5436 on 188 degrees of freedom
+    ## Multiple R-squared:  0.718,  Adjusted R-squared:  0.7045 
+    ## F-statistic: 53.19 on 9 and 188 DF,  p-value: < 2.2e-16
 
 ### AIC table comparing all model subsets
 
@@ -679,10 +679,10 @@ importance(AICmodels)
 ```
 
     ##                      Lat  Long SumofBases_cmol.log class_Ribas clay
-    ## Sum of weights:      1.00 1.00 1.00                1.00        0.28
+    ## Sum of weights:      1.00 1.00 1.00                1.00        0.31
     ## N containing models:   16   16    8                   8           8
     ##                      sa.latlong.treecover
-    ## Sum of weights:      0.25                
+    ## Sum of weights:      0.26                
     ## N containing models:    8
 
 ``` r
@@ -841,31 +841,31 @@ summary(CompleteModel)
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -1.33649 -0.20673 -0.02771  0.18404  1.18594 
+    ## -1.33646 -0.21093 -0.01932  0.18269  1.18923 
     ## 
     ## Coefficients:
     ##                                  Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)                    -9.479e+00  1.127e+01  -0.841   0.4016    
-    ## class_RibasGuiana               1.146e+00  2.386e-01   4.802 3.26e-06 ***
-    ## class_RibasNegro                1.179e+01  6.824e+00   1.728   0.0857 .  
-    ## class_RibasRondonia            -4.660e-01  2.968e-01  -1.570   0.1182    
-    ## class_RibasTapajos             -5.806e-01  3.806e-01  -1.526   0.1288    
-    ## clay                           -5.377e-02  3.137e-02  -1.714   0.0882 .  
-    ## SumofBases_cmol.log            -3.572e-02  3.775e-02  -0.946   0.3454    
-    ## sa.latlong.treecover           -9.627e-03  3.302e-02  -0.292   0.7710    
-    ## E$vectors[, MoranPval < 0.05]1 -1.051e+02  1.512e+02  -0.695   0.4878    
-    ## E$vectors[, MoranPval < 0.05]2 -9.430e+00  5.722e+00  -1.648   0.1010    
-    ## E$vectors[, MoranPval < 0.05]3 -1.570e+01  7.041e+00  -2.230   0.0270 *  
-    ## E$vectors[, MoranPval < 0.05]4 -3.084e+01  1.736e+01  -1.777   0.0773 .  
-    ## E$vectors[, MoranPval < 0.05]5  2.276e+01  2.005e+01   1.135   0.2578    
-    ## E$vectors[, MoranPval < 0.05]6 -2.837e+01  3.687e+01  -0.769   0.4426    
-    ## E$vectors[, MoranPval < 0.05]7 -3.141e+00  1.453e+01  -0.216   0.8291    
+    ## (Intercept)                      -9.70277   11.20614  -0.866   0.3877    
+    ## class_RibasGuiana                 1.16681    0.23762   4.910 2.01e-06 ***
+    ## class_RibasNegro                 11.11088    6.79562   1.635   0.1038    
+    ## class_RibasRondonia              -0.46854    0.29505  -1.588   0.1140    
+    ## class_RibasTapajos               -0.56542    0.37846  -1.494   0.1369    
+    ## clay                             -0.06972    0.03070  -2.271   0.0243 *  
+    ## SumofBases_cmol.log              -0.03274    0.03751  -0.873   0.3838    
+    ## sa.latlong.treecover             -0.01758    0.03298  -0.533   0.5946    
+    ## E$vectors[, MoranPval < 0.05]1 -108.72332  150.31275  -0.723   0.4704    
+    ## E$vectors[, MoranPval < 0.05]2   -8.83733    5.69773  -1.551   0.1226    
+    ## E$vectors[, MoranPval < 0.05]3  -15.04096    7.01203  -2.145   0.0333 *  
+    ## E$vectors[, MoranPval < 0.05]4  -29.02334   17.28833  -1.679   0.0949 .  
+    ## E$vectors[, MoranPval < 0.05]5   20.52724   19.96924   1.028   0.3053    
+    ## E$vectors[, MoranPval < 0.05]6  -29.68344   36.64478  -0.810   0.4190    
+    ## E$vectors[, MoranPval < 0.05]7   -2.78983   14.43461  -0.193   0.8470    
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.35 on 183 degrees of freedom
-    ## Multiple R-squared:  0.8862, Adjusted R-squared:  0.8775 
-    ## F-statistic: 101.8 on 14 and 183 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.348 on 183 degrees of freedom
+    ## Multiple R-squared:  0.8875, Adjusted R-squared:  0.8789 
+    ## F-statistic: 103.2 on 14 and 183 DF,  p-value: < 2.2e-16
 
 ``` r
 # Compare all submodels by AIC  
@@ -879,10 +879,10 @@ importance(AICmodels)
 ```
 
     ##                      E$vectors[, MoranPval < 0.05] class_Ribas clay
-    ## Sum of weights:      1.00                          1.00        0.65
+    ## Sum of weights:      1.00                          1.00        0.85
     ## N containing models:   16                            16          16
     ##                      SumofBases_cmol.log sa.latlong.treecover
-    ## Sum of weights:      0.36                0.25                
+    ## Sum of weights:      0.33                0.26                
     ## N containing models:   16                  16
 
 ``` r
@@ -898,29 +898,29 @@ summary(BestModel)
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -1.34473 -0.22165 -0.02863  0.17748  1.17017 
+    ## -1.34703 -0.21802 -0.02565  0.19099  1.17298 
     ## 
     ## Coefficients:
     ##                                  Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)                      -9.79006   11.20234  -0.874   0.3833    
-    ## class_RibasGuiana                 1.19210    0.23247   5.128 7.34e-07 ***
-    ## class_RibasNegro                 12.27480    6.04188   2.032   0.0436 *  
-    ## class_RibasRondonia              -0.47702    0.28223  -1.690   0.0927 .  
-    ## class_RibasTapajos               -0.59492    0.37894  -1.570   0.1181    
-    ## clay                             -0.05870    0.03087  -1.901   0.0588 .  
-    ## E$vectors[, MoranPval < 0.05]1 -108.43573  150.48703  -0.721   0.4721    
-    ## E$vectors[, MoranPval < 0.05]2   -9.90711    4.98510  -1.987   0.0484 *  
-    ## E$vectors[, MoranPval < 0.05]3  -16.21554    6.29764  -2.575   0.0108 *  
-    ## E$vectors[, MoranPval < 0.05]4  -32.05496   15.30211  -2.095   0.0375 *  
-    ## E$vectors[, MoranPval < 0.05]5   23.80651   17.94976   1.326   0.1864    
-    ## E$vectors[, MoranPval < 0.05]6  -29.13126   36.75548  -0.793   0.4290    
-    ## E$vectors[, MoranPval < 0.05]7   -3.27042   14.48814  -0.226   0.8217    
+    ## (Intercept)                     -10.28212   11.13630  -0.923   0.3571    
+    ## class_RibasGuiana                 1.20734    0.23138   5.218 4.83e-07 ***
+    ## class_RibasNegro                 12.39191    6.00604   2.063   0.0405 *  
+    ## class_RibasRondonia              -0.50279    0.28088  -1.790   0.0751 .  
+    ## class_RibasTapajos               -0.58411    0.37687  -1.550   0.1229    
+    ## clay                             -0.07236    0.03011  -2.403   0.0173 *  
+    ## E$vectors[, MoranPval < 0.05]1 -114.89419  149.60068  -0.768   0.4435    
+    ## E$vectors[, MoranPval < 0.05]2  -10.01954    4.95560  -2.022   0.0446 *  
+    ## E$vectors[, MoranPval < 0.05]3  -16.35529    6.25840  -2.613   0.0097 ** 
+    ## E$vectors[, MoranPval < 0.05]4  -32.30068   15.21168  -2.123   0.0350 *  
+    ## E$vectors[, MoranPval < 0.05]5   23.81766   17.84626   1.335   0.1836    
+    ## E$vectors[, MoranPval < 0.05]6  -30.66364   36.54101  -0.839   0.4025    
+    ## E$vectors[, MoranPval < 0.05]7   -2.82200   14.39761  -0.196   0.8448    
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.3491 on 185 degrees of freedom
-    ## Multiple R-squared:  0.8856, Adjusted R-squared:  0.8782 
-    ## F-statistic: 119.3 on 12 and 185 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.3471 on 185 degrees of freedom
+    ## Multiple R-squared:  0.8869, Adjusted R-squared:  0.8795 
+    ## F-statistic: 120.9 on 12 and 185 DF,  p-value: < 2.2e-16
 
 ``` r
 # varpart
@@ -951,16 +951,16 @@ Moran.I(BestModel$residuals,as.matrix(geoDist))
 ```
 
     ## $observed
-    ## [1] -7.792063e-05
+    ## [1] -8.120444e-05
     ## 
     ## $expected
     ## [1] -0.005076142
     ## 
     ## $sd
-    ## [1] 0.004124692
+    ## [1] 0.004124264
     ## 
     ## $p.value
-    ## [1] 0.2255964
+    ## [1] 0.2258532
 
 In case you want to use a more typical MEM analysis with all the
 associated complexities, the `adespatial` package has several functions
@@ -1000,30 +1000,30 @@ summary(CompleteModel)
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -1.34493 -0.21470 -0.02426  0.19138  1.18619 
+    ## -1.34363 -0.21212 -0.03093  0.19739  1.18971 
     ## 
     ## Coefficients:
     ##                                Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)                   -0.851689   0.191845  -4.439 1.55e-05 ***
-    ## class_RibasGuiana              0.799101   0.190545   4.194 4.26e-05 ***
-    ## class_RibasNegro               3.489154   1.536974   2.270   0.0244 *  
-    ## class_RibasRondonia           -0.152322   0.135836  -1.121   0.2636    
-    ## class_RibasTapajos            -0.513921   0.359840  -1.428   0.1549    
-    ## clay                          -0.063485   0.031635  -2.007   0.0462 *  
-    ## SumofBases_cmol.log           -0.032075   0.037436  -0.857   0.3927    
-    ## sa.latlong.treecover           0.001794   0.035008   0.051   0.9592    
-    ## E2[, MoranPval2 < 0.05]MEM1   -0.506181   0.122951  -4.117 5.79e-05 ***
-    ## E2[, MoranPval2 < 0.05]MEM2    0.625080   0.073335   8.524 5.50e-15 ***
-    ## E2[, MoranPval2 < 0.05]MEM3    0.012976   0.047802   0.271   0.7864    
-    ## E2[, MoranPval2 < 0.05]MEM5   -0.823770   0.418967  -1.966   0.0508 .  
-    ## E2[, MoranPval2 < 0.05]MEM6    0.151854   0.112872   1.345   0.1802    
-    ## E2[, MoranPval2 < 0.05]MEM197  0.495507   0.086698   5.715 4.35e-08 ***
+    ## (Intercept)                   -0.859307   0.190565  -4.509 1.16e-05 ***
+    ## class_RibasGuiana              0.830307   0.190275   4.364 2.13e-05 ***
+    ## class_RibasNegro               3.360072   1.520458   2.210   0.0283 *  
+    ## class_RibasRondonia           -0.163567   0.135249  -1.209   0.2281    
+    ## class_RibasTapajos            -0.505855   0.357780  -1.414   0.1591    
+    ## clay                          -0.076471   0.030609  -2.498   0.0134 *  
+    ## SumofBases_cmol.log           -0.029786   0.037185  -0.801   0.4242    
+    ## sa.latlong.treecover          -0.007401   0.034567  -0.214   0.8307    
+    ## E2[, MoranPval2 < 0.05]MEM1   -0.521216   0.121937  -4.274 3.07e-05 ***
+    ## E2[, MoranPval2 < 0.05]MEM2    0.642189   0.073780   8.704 1.79e-15 ***
+    ## E2[, MoranPval2 < 0.05]MEM3    0.016124   0.047570   0.339   0.7350    
+    ## E2[, MoranPval2 < 0.05]MEM5   -0.780281   0.414425  -1.883   0.0613 .  
+    ## E2[, MoranPval2 < 0.05]MEM6    0.137972   0.111158   1.241   0.2161    
+    ## E2[, MoranPval2 < 0.05]MEM197  0.489881   0.085863   5.705 4.57e-08 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.3479 on 184 degrees of freedom
-    ## Multiple R-squared:  0.8869, Adjusted R-squared:  0.8789 
-    ## F-statistic:   111 on 13 and 184 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.3459 on 184 degrees of freedom
+    ## Multiple R-squared:  0.8882, Adjusted R-squared:  0.8803 
+    ## F-statistic: 112.5 on 13 and 184 DF,  p-value: < 2.2e-16
 
 ``` r
 # Compare all submodels by AIC  
@@ -1037,10 +1037,10 @@ importance(AICmodels)
 ```
 
     ##                      E2[, MoranPval2 < 0.05] class_Ribas clay
-    ## Sum of weights:      1.00                    1.00        0.77
+    ## Sum of weights:      1.00                    1.00        0.92
     ## N containing models:   16                      16          16
     ##                      SumofBases_cmol.log sa.latlong.treecover
-    ## Sum of weights:      0.34                0.24                
+    ## Sum of weights:      0.31                0.24                
     ## N containing models:   16                  16
 
 ``` r
@@ -1056,28 +1056,28 @@ summary(BestModel)
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -1.34949 -0.20837 -0.01584  0.18924  1.17307 
+    ## -1.35227 -0.20863 -0.02552  0.18656  1.17653 
     ## 
     ## Coefficients:
     ##                               Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)                   -0.87687    0.18893  -4.641 6.52e-06 ***
-    ## class_RibasGuiana              0.84798    0.15728   5.391 2.10e-07 ***
-    ## class_RibasNegro               3.41159    1.40502   2.428   0.0161 *  
-    ## class_RibasRondonia           -0.14697    0.13463  -1.092   0.2764    
-    ## class_RibasTapajos            -0.52225    0.35829  -1.458   0.1466    
-    ## clay                          -0.06753    0.03092  -2.184   0.0302 *  
-    ## E2[, MoranPval2 < 0.05]MEM1   -0.53146    0.10806  -4.918 1.91e-06 ***
-    ## E2[, MoranPval2 < 0.05]MEM2    0.64793    0.06265  10.342  < 2e-16 ***
-    ## E2[, MoranPval2 < 0.05]MEM3    0.01741    0.04678   0.372   0.7102    
-    ## E2[, MoranPval2 < 0.05]MEM5   -0.79391    0.37594  -2.112   0.0360 *  
-    ## E2[, MoranPval2 < 0.05]MEM6    0.14570    0.09151   1.592   0.1130    
-    ## E2[, MoranPval2 < 0.05]MEM197  0.49673    0.08134   6.107 5.80e-09 ***
+    ## (Intercept)                   -0.88064    0.18762  -4.694 5.19e-06 ***
+    ## class_RibasGuiana              0.85073    0.15625   5.445 1.63e-07 ***
+    ## class_RibasNegro               3.44142    1.39592   2.465  0.01460 *  
+    ## class_RibasRondonia           -0.16235    0.13414  -1.210  0.22770    
+    ## class_RibasTapajos            -0.51670    0.35617  -1.451  0.14854    
+    ## clay                          -0.08013    0.03015  -2.658  0.00854 ** 
+    ## E2[, MoranPval2 < 0.05]MEM1   -0.53160    0.10735  -4.952 1.64e-06 ***
+    ## E2[, MoranPval2 < 0.05]MEM2    0.65525    0.06204  10.562  < 2e-16 ***
+    ## E2[, MoranPval2 < 0.05]MEM3    0.01805    0.04647   0.388  0.69810    
+    ## E2[, MoranPval2 < 0.05]MEM5   -0.79808    0.37344  -2.137  0.03389 *  
+    ## E2[, MoranPval2 < 0.05]MEM6    0.14883    0.09089   1.638  0.10319    
+    ## E2[, MoranPval2 < 0.05]MEM197  0.49833    0.08083   6.165 4.28e-09 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.3468 on 186 degrees of freedom
-    ## Multiple R-squared:  0.8865, Adjusted R-squared:  0.8798 
-    ## F-statistic:   132 on 11 and 186 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.3447 on 186 degrees of freedom
+    ## Multiple R-squared:  0.8878, Adjusted R-squared:  0.8812 
+    ## F-statistic: 133.8 on 11 and 186 DF,  p-value: < 2.2e-16
 
 ``` r
 # varpart
@@ -1108,16 +1108,16 @@ Moran.I(BestModel$residuals,as.matrix(geoDist))
 ```
 
     ## $observed
-    ## [1] -6.164897e-05
+    ## [1] -6.288242e-05
     ## 
     ## $expected
     ## [1] -0.005076142
     ## 
     ## $sd
-    ## [1] 0.004124495
+    ## [1] 0.00412406
     ## 
     ## $p.value
-    ## [1] 0.2240673
+    ## [1] 0.2241325
 
 ### Tukey HSD test comparing regions
 
