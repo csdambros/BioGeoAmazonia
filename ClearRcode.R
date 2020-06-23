@@ -22,8 +22,7 @@
 #' 
 #' # Tutorial to analyze the distribution of species along environmental and geographic gradients in Amazonia
 #' 
-#' This script exemplifies analyses using a single taxonomic group. The sripts uses 
-#' For combined analyses without requiring repetition of this code multiple times when analyzing multiple datasets contact the authors
+#' This script exemplifies analyses using a single taxonomic group. The sripts uses data and R functions provided in `.csv` and `.R` formats. For combined analyses without requiring repetition of this code multiple times when analyzing multiple datasets contact the authors
 #' 
 #' # Import packages and functions
 #' 
@@ -344,7 +343,7 @@ plot(function(x){plogis(cbind(1,x)%*%coef(glm1))},xlim=c(0,100),add=TRUE,lwd=2,c
 #' 
 #' We can run regression models associating predictor distance matrices to the response dissimilarity matrix. However, dissimilarity values in the matrix are not independent of each other as required in classical regression and ANOVA models. This happens because each plot is used multiple times for comparisons to all other plots. To not inflate Type I error rates, p-values can be calculated by randomly permuting plots (not dissimilarity values). The `MRM` function from the `ecodist` package does just this.
 #' 
-#' To facilitate the analyses, we created the MRM4 function. This function is very similar to the MRM function from the ecodist package. However, the function automatically compares the predictor and response matrices so that they have the same size (i.e. it is possible to provide matrices of different dimensions) and standardizes the predictor and response matrices to make the coefficients comparable. This also makes these coefficients equivalent to those obtained in a Mantel test with the advantage that more than one predictor variable can be included in the same model (as in a partial Mantel test).
+#' To facilitate the analyses, we created the `MRM4` function. This function is very similar to the `MRM` function from the `ecodist` package. However, the function automatically compares the predictor and response matrices so that they have the same size (i.e. it is possible to provide matrices of different dimensions) and standardizes the predictor and response matrices to make the coefficients comparable. This also makes these coefficients equivalent to those obtained in a Mantel test with the advantage that more than one predictor variable can be included in the same model (as in a partial Mantel test).
 #' 
 #' 
 ## ----MRM - simple regressions, eval=FALSE--------------------------------------------------
@@ -407,8 +406,9 @@ plot(r2part,bg=adjustcolor(c(1,4,3),0.4),Xnames=c("Geo+\nClim","Rivers","Env"))
 # Run PCoA using the jaccard dissimilarity matrix calculated above
 pcoa<-scores(cmdscale(ecoDist,eig=TRUE))
 
-# The same as above but preserving the eigenvalues.
-# This is necessary to calculate the variance captured by the axes
+# The same as above but preserving the eigenvalues and adding a constant
+# Eigenvalues are necessary to calculate the variance captured by the axes
+# Adding a constant assures that the sum of variance of all axes is 100%
 pcoaEig<-cmdscale(ecoDist,eig = TRUE,add = TRUE)
 
 
@@ -565,9 +565,9 @@ Moran.I(BestModel$residuals,as.matrix(geoDist))
 #' 
 #' ### Using Moran EigenVector Maps as spatial predictor
 #' 
-#' For the taxa shown here, we can observe that model residuals have spatial autocorrelation. This means that the analysis is violating the independence of sampling units requirement of the regression models. To correct for this problem, it is possible to include other more complex spatial variables as predictor variables in the model, so that they capture the entire spatial component of the data. Because the regression model calculates partial coefficients and p-values, the estimates for the other variables in the model will represent the results after the removal of the effect of these spatial variables (and any other variable in the model), so it will be corrected for spatial autocorrelation.
+#' For the taxa shown here, we can observe that model residuals have spatial autocorrelation (p = $1.4 \times 10^{-5}$ or p < 0.05). This means that the analysis is violating the independence of sampling units requirement of the regression models. To correct for this problem, it is possible to include other more complex spatial variables as predictor variables in the model, so that they capture the entire spatial component of the data. Because the regression model calculates partial coefficients and p-values, the estimates for the other variables in the model will represent the results after the removal of the effect of these spatial variables (and any other variable in the model), so it will be corrected for spatial autocorrelation.
 #' 
-#' As an alternative to including Latitude and Longitude as linear predictor variables, we used Moran Eigenvector Maps as predictors. MEMs are also linear predictors, but they represent more complex forms of spatial autocorrelation. MEMs can represent the entire spatial arrangement of the data from fine to broad spatial scales. Here we define MEMs in the simplest form using the geographic distance matrix. There are many different ways to create MEMs (see Dray et al. 2012; Legendre and Gauthier 2012; Baumann 2019 for more details) that might be interesting to add biological realism to the spatial structure (e.g. directional dispersal). However, testing these more complex forms of autocorrelation has not changed substantially the results and it was the focus of this study.
+#' As an alternative to including Latitude and Longitude as linear predictor variables, we used Moran Eigenvector Maps as predictors. MEMs are also linear predictors, but they represent more complex forms of spatial autocorrelation. MEMs can represent the entire spatial arrangement of the data from fine to broad spatial scales. Here we define MEMs in the simplest form using the geographic distance matrix. There are many different ways to create MEMs (see Dray et al. 2012; Legendre and Gauthier 2012; Baumann 2019 for more details) that might be interesting to add biological realism to the spatial structure (e.g. directional dispersal). However, testing these more complex forms of autocorrelation has not changed substantially the results and it was not the focus of this study.
 #' 
 #' #### Create MEMs
 #' 
